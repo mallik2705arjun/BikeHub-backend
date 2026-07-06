@@ -15,7 +15,12 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://bike-hub-frontend.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(logger);
 
